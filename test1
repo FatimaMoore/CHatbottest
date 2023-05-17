@@ -1,0 +1,90 @@
+&lt;style type=&#39;text/css&#39;&gt;
+.embeddedServiceHelpButton .helpButton .uiButton {
+background-color: #D42725;
+font-family: &quot;Arial&quot;, sans-serif;
+}
+.embeddedServiceHelpButton .helpButton .uiButton:focus {
+outline: 1px solid #D42725;
+}
+&lt;/style&gt;
+&lt;script type=&#39;text/javascript&#39;
+src=&#39;https://service.force.com/embeddedservice/5.0/esw.min.js&#39;&gt;&lt;/script&gt;
+&lt;script type=&#39;text/javascript&#39;&gt;
+var initESW = function(gslbBaseURL) {
+embedded_svc.settings.displayHelpButton = true; //Or false
+embedded_svc.settings.language = &#39;de&#39;; //For example, enter &#39;en&#39; or &#39;en-US&#39;
+embedded_svc.settings.defaultMinimizedText = &#39;Chatte mit uns!&#39;; //(Defaults to
+
+Chat with an Expert)
+
+//embedded_svc.settings.disabledMinimizedText = &#39;...&#39;; //(Defaults to Agent
+
+Offline)
+
+embedded_svc.settings.loadingText = &#39;Wird geladen&#39;; //(Defaults to Loading)
+//embedded_svc.settings.storageDomain = &#39;yourdomain.com&#39;; //(Sets the domain
+
+for your deployment so that visitors can navigate subdomains during a chat session)
+
+// Settings for Chat
+//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+// Dynamically changes the button ID based on what the visitor enters in
+
+the pre-chat form.
+
+// Returns a valid button ID.
+//};
+//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-
+
+population of pre-chat form fields
+
+//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs,
+
+or userId_buttonId
+
+//embedded_svc.settings.offlineSupportMinimizedText = &#39;...&#39;; //(Defaults to
+
+Contact Us)
+
+embedded_svc.settings.enabledFeatures = [&#39;LiveAgent&#39;];
+embedded_svc.settings.entryFeature = &#39;LiveAgent&#39;;
+embedded_svc.init(
+&#39;https://sp-unternehmerforum--chatbotdev.sandbox.my.salesforce.com&#39;,
+
+&#39;https://sp-unternehmerforum--chatbotdev.sandbox.my.site.com/&#39;,
+gslbBaseURL,
+&#39;00D9M000000C52L&#39;,
+&#39;S_P&#39;,
+{
+baseLiveAgentContentURL: &#39;https://c.la2s-core1.sfdc-
+
+yzvdd4.salesforceliveagent.com/content&#39;,
+
+deploymentId: &#39;5729M0000002PlV&#39;,
+buttonId: &#39;5739M0000000bM9&#39;,
+baseLiveAgentURL: &#39;https://d.la2s-core1.sfdc-
+
+yzvdd4.salesforceliveagent.com/chat&#39;,
+
+eswLiveAgentDevName:
+
+&#39;EmbeddedServiceLiveAgent_Parent04I9M0000000PPpUAM_187752c5f28&#39;,
+
+isOfflineSupportEnabled: false
+}
+);
+};
+if (!window.embedded_svc) {
+var s = document.createElement(&#39;script&#39;);
+s.setAttribute(&#39;src&#39;, &#39;https://sp-unternehmerforum--
+
+chatbotdev.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js&#39;);
+
+s.onload = function() {
+initESW(null);
+};
+document.body.appendChild(s);
+} else {
+initESW(&#39;https://service.force.com&#39;);
+}
+&lt;/script&gt;
