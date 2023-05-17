@@ -1,3 +1,4 @@
+<html>
 &lt;style type=&#39;text/css&#39;&gt;
 .embeddedServiceHelpButton .helpButton .uiButton {
 background-color: #D42725;
@@ -88,3 +89,4 @@ document.body.appendChild(s);
 initESW(&#39;https://service.force.com&#39;);
 }
 &lt;/script&gt;
+</html>
